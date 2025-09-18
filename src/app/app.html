@@ -1,5 +1,11 @@
 <div class="container py-4">
   <app-transazioni-list [transactions]="dati"></app-transazioni-list>
+  <!-- 
+    @Input (definito nel file .ts del componente figlio) permette di ricevere dati dal componente genitore. 
+    In questo caso, il genitore passa a <app-transazioni-list> i dati contenuti in "dati". 
+    Nel figlio, questi dati vengono salvati in una variabile decorata con @Input, con un tipo ben definito.
+    Le parentesi quadre [] in [transactions]="dati" indicano che stiamo passando la variabile "dati" dal genitore alla proprietà "transactions" del figlio.
+  -->
 </div>
 
 

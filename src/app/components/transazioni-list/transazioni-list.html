@@ -1,1 +1,7 @@
-<p>Prova</p>
+<div class="d-flex flex-wrap" style="gap:1rem">
+    @for( t of transactions; track $index){
+    <app-transazione-detail></app-transazione-detail>
+    }
+    <!-- Ciclo for: per ogni elemento t dentro l'array transactions viene creato un componente <app-transazione-detail>.
+     track $index serve per tracciare ogni elemento con l'indice ed evitare problemi di prestazioni o rendering duplicati. -->
+</div>

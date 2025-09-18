@@ -1,3 +1,3 @@
 /* Importa il CSS di Bootstrap dal pacchetto npm per usare le classi di stile nel progetto Angular */
 /* collega il percorso del documento, omettendo node_modules/ */
-@import "bootstrap/dist/css/bootstrap.min.css"
+@import "bootstrap/dist/css/bootstrap-grid.min.css";

@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { Transazione } from '../../models/transazione';
+import { TransazioneDetail } from "../transazione-detail/transazione-detail";
 
 @Component({
   selector: 'app-transazioni-list',
-  imports: [],
+  imports: [TransazioneDetail],
   templateUrl: './transazioni-list.html',
   styleUrl: './transazioni-list.css'
 })
