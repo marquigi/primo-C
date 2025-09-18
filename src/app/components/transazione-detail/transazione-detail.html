@@ -1,1 +1,44 @@
-{{ transazione | json }}
+@if(transazione){
+<!-- Controlla se esiste una variabile 'transazione'. 
+         Se sì, mostra il contenuto della card. -->
+
+<div class="card" style="width: 26em;" [ngClass]="{
+        'bg-success': transazione.type == 'invoice', 
+        'bg-secondary': transazione.type == 'withdrawal'
+        }">
+    <!-- Crea una card Bootstrap larga 26em.
+         Con [ngClass] applica la classe 'bg-success' se il tipo è 'invoice',
+         oppure 'bg-secondary' se il tipo è 'withdrawal'. -->
+
+    <div class="card-body">
+        <!-- Corpo della card che contiene i dettagli della transazione. -->
+
+        <h5 class="card-title"> {{ transazione.business }}</h5>
+        <!-- Mostra il nome dell’attività/business legato alla transazione. -->
+
+        <p class="class-text">{{ transazione.name }}</p>
+        <!-- Mostra il nome della persona collegata alla transazione. -->
+
+        <p class="class-text">Account: {{ transazione.account }}</p>
+        <!-- Mostra il numero o nome dell’account usato nella transazione. -->
+
+        <p class="class-text">Date: {{ transazione.date * 1000 | date : "dd/MM/yyyy HH:mm"}}</p>
+        <!-- Mostra la data della transazione.
+             'transazione.date' è probabilmente in secondi, perciò si moltiplica per 1000
+             per convertirla in millisecondi (richiesti dalla pipe 'date'). -->
+
+        <p class="class-text">Type: {{ transazione.type }}</p>
+        <!-- Mostra il tipo della transazione (es. invoice, withdrawal). -->
+
+        <p class="class-text" [ngClass]="{'bg-warning' : transazione.amount > 700 }">
+            Amount: {{ transazione.amount | currency : "EUR" }}
+        </p>
+        <!-- Mostra l’importo della transazione in euro.
+             Se l’importo è maggiore di 700, aggiunge la classe 'bg-warning' per evidenziare. -->
+    </div>
+</div>
+}
+<!-- Chiusura del blocco @if -->
+
+
+<!-- {{ transazione | json }} -->

@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Transazione } from '../../models/transazione';
-import { JsonPipe } from '@angular/common';
+import { CurrencyPipe, DatePipe, JsonPipe, NgClass } from '@angular/common';
+
 
 @Component({
   selector: 'app-transazione-detail',
-  imports: [JsonPipe],
+  imports: [JsonPipe, NgClass, CurrencyPipe, DatePipe],
   templateUrl: './transazione-detail.html',
   styleUrl: './transazione-detail.css'
 })
