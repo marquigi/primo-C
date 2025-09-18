@@ -1,7 +1,15 @@
 <div class="d-flex flex-wrap" style="gap:1rem">
     @for( t of transactions; track $index){
-    <app-transazione-detail></app-transazione-detail>
-    }
     <!-- Ciclo for: per ogni elemento t dentro l'array transactions viene creato un componente <app-transazione-detail>.
      track $index serve per tracciare ogni elemento con l'indice ed evitare problemi di prestazioni o rendering duplicati. -->
+
+    <app-transazione-detail [transazione]="t"></app-transazione-detail>
+    <!-- [transazione]="t" serve per passare i dati dal componente padre al componente figlio.
+     In questo caso viene passato l’oggetto t (una singola transazione dell’array) 
+     alla proprietà @Input() transazione definita dentro <app-transazione-detail>. -->
+
+    }
+
+
+
 </div>
